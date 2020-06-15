@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Property } from 'src/app/models/property';
+import { PropertyService } from '../../shared/services/property.service';
+import { Property } from '../../models/property';
 
 @Component({
   selector: 'app-property',
@@ -10,9 +11,13 @@ export class PropertyComponent implements OnInit {
 
   properties: Property[] = [];
 
-  constructor() { }
+  constructor(private propertyService: PropertyService) { }
 
   ngOnInit(): void {
-  }
 
+      this.propertyService.getAll().subscribe((propertiesFromServer: Property[]) => {
+      this.properties = propertiesFromServer;
+      console.log(propertiesFromServer);
+    });
+  }
 }
