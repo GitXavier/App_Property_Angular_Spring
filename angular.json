@@ -123,6 +123,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "appPropertyFrontend"
+    }
+  },
+  "defaultProject": "appPropertyFrontend",
+  "cli": {
+    "analytics": "b8b32406-b6a3-479f-9d28-7dc5ea00923c"
+  }
 }
