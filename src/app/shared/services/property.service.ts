@@ -14,4 +14,8 @@ export class PropertyService {
    public getAll(): Observable<Property[]>{
     return this.httpClient.get<Property[]>('http://localhost:8080/properties');
   }
+
+  public creat(property: Property): Observable<Property>{
+    return this.httpClient.post<Property>('http://localhost:8080/properties', property);
+  }
 }

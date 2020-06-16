@@ -1,5 +1,14 @@
 <p>property works!</p>
 
+
+<form (ngSubmit)="sendProperty()">
+
+  <input [(ngModel)]="property.name" type="text" name="propertyName">
+
+  <button type="submit">Save</button>
+
+</form>
+
 <div *ngFor="let property of properties">
   {{property.name}}
 </div>

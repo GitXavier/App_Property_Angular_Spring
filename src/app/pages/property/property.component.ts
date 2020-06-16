@@ -10,14 +10,18 @@ import { Property } from '../../models/property';
 export class PropertyComponent implements OnInit {
 
   properties: Property[] = [];
+  property = new Property();
 
   constructor(private propertyService: PropertyService) { }
 
   ngOnInit(): void {
-
       this.propertyService.getAll().subscribe((propertiesFromServer: Property[]) => {
       this.properties = propertiesFromServer;
       console.log(propertiesFromServer);
     });
+  }
+
+  sendProperty() {
+    this.propertyService.creat(this.property).subscribe((property: Property) => { });
   }
 }
